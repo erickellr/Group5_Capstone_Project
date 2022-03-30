@@ -2,15 +2,25 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="welcomeStyle.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <script src="welcome.js"></script>
+  <title>Welcome</title>
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+  <div class="main">
+    <p class="welcomeFont" align="center">Welcome to Elliptigo's Member Databse!</p>
+    <form class="form1">
+      <input class="usernameBox" id="userID" type="text" align="center" placeholder="UserID">
+      <input class="passwordBox" id="userPass" type="password" align="center" placeholder="Password">
+      <a class="submit" align="center" onclick="storeUserInformation()">Sign in</a>
+      <a class="createSubmit" align="center" onclick="storeUserInformation()">Create Account</a>   
+                
+    </div>
+     
 </body>
 
 </html>
