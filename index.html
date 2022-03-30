@@ -6,18 +6,21 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <script src="welcome.js"></script>
+  <script type="text/javascript" src="welcome.js"></script>
   <title>Welcome</title>
 </head>
 
 <body>
+  <div id=serverRespo></div>
+    <div> Result <span id=output1></span></div>
   <div class="main">
     <p class="welcomeFont" align="center">Welcome to Elliptigo's Member Databse!</p>
     <form class="form1">
-      <input class="usernameBox" id="userID" type="text" align="center" placeholder="UserID">
-      <input class="passwordBox" id="userPass" type="password" align="center" placeholder="Password">
-      <a class="submit" align="center" onclick="storeUserInformation()">Sign in</a>
-      <a class="createSubmit" align="center" onclick="storeUserInformation()">Create Account</a>   
+      <input class="usernameBox" id="loginID" type="text" align="center" placeholder="UserID">
+      <input class="passwordBox" id="password" type="password" align="center" placeholder="Password">
+      <a class="submit" align="center" onclick="storeUserInfo()">Sign in</a>
+      <a class="createSubmit" align="center">Create Account</a>
+      
                 
     </div>
      
