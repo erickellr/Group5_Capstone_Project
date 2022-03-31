@@ -10,16 +10,16 @@
 </head>
 
 <body>
-  <div id=serverRespo></div>
-    <div> Result <span id=output1></span></div>
+
   <div class="main">
-    <p class="welcomeFont" align="center">Welcome to Elliptigo's Member Databse!</p>
+    <p class="welcomeFont" align="center">Welcome to GERC!</p>
     <form class="form1">
-      <input class="usernameBox" id="loginID" type="text" align="center" placeholder="UserID">
-      <input class="passwordBox" id="password" type="password" align="center" placeholder="Password">
-      <a class="submit" align="center" onclick="callBackend()">Sign in</a>
-      <a class="createSubmit" align="center">Create Account</a>
-      
+      <a class="submit" align="center">Sign in</a>
+      <a class="joinGerc" align="center" onclick="location.href='createacc.html';">Join GERC Membership</a>
+      <input class="queryBox" id="queryBox" type="text" align="center" placeholder="Search Members by Last Name">
+      <a class="search" align="center" onclick="queryDB()">Search Member Database</a>
+      <div id="serverRespo"></div>
+        <div id="result" align="center"><span id="output1"></span></div>
                 
     </div>
      

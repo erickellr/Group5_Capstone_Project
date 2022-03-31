@@ -1,23 +1,29 @@
-  async function callBackend() {
+  async function queryDB() {
 
-      loginID = document.getElementById('loginID').value;
-      password = document.getElementById('password').value;
-      var alphaNumericRegEx = /^[0-9a-zA-Z]+$/;
-      if (!loginID.match(alphaNumericRegEx)) {
-	  document.getElementById('output1').innerHTML = '<span style=color:red;>Login ID must consist of letters and numbers only</span>';
-	  return;
-      }
-      if ((password.length < 1) || (!password.match(alphaNumericRegEx))) {
-	  document.getElementById('output1').innerHTML = '<span style=color:red;>Password must not be empty and must consist of letters and numbers only</span>';
+      query = document.getElementById('queryBox').value;
+      var alphaRegEx = /^[A-Za-z]+$/;
+            if (!query.match(alphaRegEx)) {
+	  document.getElementById('output1').innerHTML = '<span style=color:red;>Member last name must consist of letters only</span>';
 	  return;
       }
 
-      let myResponse = await fetch("userinfo.php", {
+      if (query.length < 2) {
+	  document.getElementById('output1').innerHTML = '<span style=color:red;>Member last name must exceed one letter</span>';
+	  return;
+      }
+
+      let myResponse = await fetch("query.php", {
 	  method: 'POST',
 	  headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-	  body: JSON.stringify({loginID: loginID, password: password})
+	  body: JSON.stringify({query: query})
 	  });
       let result = await myResponse.json();
-      document.getElementById('output1').innerHTML = JSON.stringify(result);
+      let output = JSON.stringify(result)
+      if (output == '{"status":false,"info":"invalid last name"}'){
+	document.getElementById('output1').innerHTML = "Invalid Last Name!";
+      }
+      else{
+	document.getElementById('output1').innerHTML = "User Match";
+      }
     
   }
