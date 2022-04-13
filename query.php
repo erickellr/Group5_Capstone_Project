@@ -1,12 +1,12 @@
 <?php
 function checkLogin($query) {
-    $db = new SQLite3('db/info.db');
+    $db = new SQLite3('db/individual.db');
     $db->exec('BEGIN EXCLUSIVE;');
-    $querydb = "SELECT lastname FROM userInfo WHERE lastname == '$query'";
+    $querydb = "SELECT username FROM userInfo WHERE username == '$query'";
     $queryResult = $db->querySingle($querydb, false);
     error_log(print_r($queryResult, true));
     if ($queryResult === $query){
-    	$loginResult = array('status' => True, 'info' => 'last name match');
+    	$loginResult = $queryResult;
     } else {
 	$loginResult = array('status' => False, 'info' => 'invalid last name');
     }

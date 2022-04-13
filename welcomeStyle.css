@@ -1,7 +1,6 @@
-HTML CSSResult Skip Results Iframe
-EDIT ON
-        body {
-        background-color: #F3EBF6;
+
+    body {
+
         font-family: 'Ubuntu', sans-serif;
     }
     
@@ -16,7 +15,7 @@ EDIT ON
     
     .welcomeFont {
         padding-top: 40px;
-        color: #3A9E1F;
+        color: #85c442;
         font-family: 'Ubuntu', sans-serif;
         font-weight: bold;
         font-size: 25px;
@@ -69,14 +68,14 @@ EDIT ON
       cursor: pointer;
         border-radius: 5em;
         color: #FFF;
-        background: linear-gradient(to right, #3A9E1F, #215414);
+        background: linear-gradient(to right, #3A9E1F, #85c442);
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 10px;
         padding-top: 10px;
         font-family: 'Ubuntu', sans-serif;
-        margin-left: 35%;
+        margin-left: 37%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
     }
@@ -85,7 +84,7 @@ EDIT ON
       cursor: pointer;
         border-radius: 5em;
         color: #FFF;
-        background: linear-gradient(to right, #3A9E1F, #215414);
+        background: linear-gradient(to right, #3A9E1F, #85c442);
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
@@ -104,14 +103,14 @@ EDIT ON
       cursor: pointer;
         border-radius: 5em;
         color: #FFF;
-        background: linear-gradient(to right, #3A9E1F, #215414);
+        background: linear-gradient(to right, #3A9E1F, #85c442);
         border: 0;
         padding-left: 40px;
         padding-right: 40px;
         padding-bottom: 10px;
         padding-top: 10px;
         font-family: 'Ubuntu', sans-serif;
-        margin-left: 23%;
+        margin-left: 21.5%;
         line-height: 20px;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
@@ -123,6 +122,8 @@ EDIT ON
         height: 100px;
         margin-top: 30px;
     }
+    
+    
     
     @media (max-width: 600px) {
         .main {

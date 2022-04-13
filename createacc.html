@@ -6,19 +6,25 @@
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script type="text/javascript" src="createacc.js"></script>
-  <title>Welcome</title>
+  <title>Individual Membership</title>
+  <img src="logo.png" align="center"/>
 </head>
 
 <body>
   <div class="main">
-    <p class="welcomeFont" align="center">Please enter new member information below:</p>
+    <p class="welcomeFont" align="center">Please enter new individual member information below:</p>
     <form class="form1">
       <input class="usernameBox" id="FN" type="text" align="center" placeholder="First Name">
-      <input class="passwordBox" id="LN" type="text" align="center" placeholder="Last Name">
-      <a class="submit" align="center" onclick="callBackend()">Submit</a>
-      <a class="createSubmit" align="center" onclick="location.href='index.html';">Back</a>
+      <input class="usernameBox" id="LN" type="text" align="center" placeholder="Last Name">
+      <input class="usernameBox" id="email" type="text" align="center" placeholder="Email Address">
+      <input class="usernameBox" id="address" type="text" align="center" placeholder="Complete Mailing Address">
+      <input class="usernameBox" id="model" type="text" align="center" placeholder="Elliptigo Model Type (e.g. 3C)">
+      <input class="usernameBox" id="username" type="text" align="center" placeholder="Username">
+      <input class="usernameBox" id="password" type="password" align="center" placeholder="Password">
+      <a class="submit" align="center" onclick="callBackend()">Create Membership</a>
+      <a class="createSubmit" align="center" onclick="location.href='createQuestion.html';">Back</a>
       <div id="serverRespo"></div>
-        <div id="result" align="center"><span id="output1"></span></div>
+        <div id="result" align="center"><span style="color:red" id="output1"></span></div>
                 
     </div>
      

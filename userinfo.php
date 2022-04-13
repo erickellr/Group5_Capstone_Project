@@ -1,14 +1,14 @@
 <?php
-function checkLogin($firstName, $lastName) {
-    $db = new SQLite3('db/info.db');
+function checkLogin($firstName, $lastName, $email, $address, $model, $username, $password) {
+    $db = new SQLite3('db/individual.db');
     $db->exec('BEGIN EXCLUSIVE;');
-    $query = "SELECT * FROM userInfo WHERE lastname = '$lastName'";
+    $query = "SELECT * FROM userInfo WHERE username = '$username'";
     $queryResult = $db->querySingle($query, true);
     error_log(print_r($queryResult, true));
     if (count($queryResult) === 0) {
-	$query = "INSERT INTO userInfo (firstname, lastname) values ('$firstName', '$lastName')";
+	$query = "INSERT INTO userInfo (firstname, lastname, email, address, model, username, password) values ('$firstName', '$lastName', '$email', '$address', '$model', '$username', '$password')";
 	$db->exec($query);
-	$loginResult = array('status' => TRUE, 'info' => 'User Created');	
+	$loginResult = array('username' => $username);	
     } else {
 	$loginResult = array('status' => FALSE, 'info' => 'Existing User');
     }
@@ -22,9 +22,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $postDecoded = json_decode($postData);
     $firstName = $postDecoded->firstName;
     $lastName = $postDecoded->lastName;
+    $email = $postDecoded->email;
+    $address = $postDecoded->address;
+    $model = $postDecoded->model;
+    $username = $postDecoded->username;
+    $password = $postDecoded->password;
     error_log("Server received login ID: " . $firstName . ", password: " . $lastName . "\n");
 
-    $loginResult = checkLogin($firstName, $lastName);
+    $loginResult = checkLogin($firstName, $lastName, $email, $address, $model, $username, $password);
 
     $jsonToSend = json_encode($loginResult);
     error_log("Server sending response: " . $jsonToSend);

@@ -7,19 +7,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <script type="text/javascript" src="welcome.js"></script>
   <title>Welcome</title>
+  <img src="logo.png" align="center"/>
+
 </head>
 
 <body>
 
   <div class="main">
-    <p class="welcomeFont" align="center">Welcome to GERC!</p>
+    <p class="welcomeFont" align="center">Welcome to the Global Elliptigo Riders Club!</p>
     <form class="form1">
       <a class="submit" align="center">Sign in</a>
-      <a class="joinGerc" align="center" onclick="location.href='createacc.html';">Join GERC Membership</a>
-      <input class="queryBox" id="queryBox" type="text" align="center" placeholder="Search Members by Last Name">
-      <a class="search" align="center" onclick="queryDB()">Search Member Database</a>
+      <a class="joinGerc" align="center" onclick="location.href='createQuestion.html';">Join GERC Membership</a>
+      <input class="queryBox" id="queryBox" type="text" align="center" placeholder="Search Membership by Username">
+      <a class="search" align="center" onclick="queryDB()">Search Membership Status</a>
       <div id="serverRespo"></div>
-        <div id="result" align="center"><span id="output1"></span></div>
+        <div id="result" align="center"><span style="color:red" id="output1"></span></div> 
                 
     </div>
      
