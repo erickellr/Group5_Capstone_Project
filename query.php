@@ -9,6 +9,7 @@ function checkLogin($query) {
     	$loginResult = $queryResult;
     } else {
 	$loginResult = array('status' => False, 'info' => 'invalid last name');
+	return $loginResult;
     }
     $db->exec('END;');
     $db->close();
