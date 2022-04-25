@@ -6,7 +6,7 @@
 	  document.getElementById('output1').innerHTML = '<span style=color:red;>Username must consist of letters & numbers only</span>';
 	  return;
       }
-
+	
       if (query.length < 2) {
 	  document.getElementById('output1').innerHTML = '<span style=color:red;>Member last name must exceed one letter</span>';
 	  return;
