@@ -6,7 +6,7 @@ function checkLogin($firstName, $lastName, $email, $address, $model, $username, 
     $queryResult = $db->querySingle($query, true);
     error_log(print_r($queryResult, true));
     if (count($queryResult) === 0) {
-	$query = "INSERT INTO userInfo (firstname, lastname, email, address, model, username, password) values ('$firstName', '$lastName', '$email', '$address', '$model', '$username', '$password')";
+	$query = "INSERT INTO userInfo (firstname, lastname, email, address, model, username, password, memberStatus) values ('$firstName', '$lastName', '$email', '$address', '$model', '$username', '$password', 0)";
 	$db->exec($query);
 	$loginResult = array('username' => $username);	
     } else {

@@ -19,7 +19,8 @@
       <input class="usernameBox" id="email" type="text" align="center" placeholder="Email Address">
       <input class="usernameBox" id="address" type="text" align="center" placeholder="Complete Mailing Address">
       <input class="usernameBox" id="model" type="text" align="center" placeholder="Elliptigo Model Type (e.g. 3C)">
-      <input class="usernameBox" id="username" type="text" align="center" placeholder="Username">
+      
+	  <input class="usernameBox" id="username" type="text" align="center" placeholder="Username">
       <input class="usernameBox" id="password" type="password" align="center" placeholder="Password">
       <a class="submit" align="center" onclick="callBackend()">Create Membership</a>
       <a class="createSubmit" align="center" onclick="location.href='createQuestion.html';">Back</a>
@@ -65,7 +66,18 @@
             element.innerHTML = '<h3>Thank you for your payment!</h3>';
 
             // Or go to another URL:  actions.redirect('thank_you.html');
-            
+			
+			//Here's what I have so far just based on the other pages.
+			
+			/*
+			let myResponse = await fetch("payment.php", {
+			method: 'POST',
+			headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+			body: JSON.stringify({username: username})
+			});
+			let result = await myResponse.json();
+			let output = JSON.stringify(result);
+			*/
           });
         },
 
