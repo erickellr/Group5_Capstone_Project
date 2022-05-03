@@ -3,7 +3,10 @@
       firstName = document.getElementById('FN').value;
       lastName = document.getElementById('LN').value;
       email = document.getElementById('email').value;
-      address = document.getElementById('address').value;
+      street = document.getElementById('street').value;
+	  city = document.getElementById('city').value;
+	  state = document.getElementById('state').value;
+	  zip = document.getElementById('zip').value;
       model = document.getElementById('model').value;
       username = document.getElementById('username').value;
       password = document.getElementById('password').value;
@@ -26,7 +29,7 @@
       let myResponse = await fetch("userinfo.php", {
 	  method: 'POST',
 	  headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-	  body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, address: address, model: model, username: username, password: password})
+	  body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, street: street, city: city, state: state, zip: zip, model: model, username: username, password: password})
 	  });
       let result = await myResponse.json();
       let output = JSON.stringify(result);

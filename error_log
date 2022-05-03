@@ -1,0 +1,21 @@
+[26-Apr-2022 01:43:24 UTC] Server received last name: etabbert
+
+[26-Apr-2022 01:43:24 UTC] PHP Fatal error:  Uncaught Error: Class "SQLite3" not found in C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php:3
+Stack trace:
+#0 C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php(26): checkLogin('etabbert')
+#1 {main}
+  thrown in C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php on line 3
+[26-Apr-2022 01:43:25 UTC] Server received last name: etabbert
+
+[26-Apr-2022 01:43:25 UTC] PHP Fatal error:  Uncaught Error: Class "SQLite3" not found in C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php:3
+Stack trace:
+#0 C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php(26): checkLogin('etabbert')
+#1 {main}
+  thrown in C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php on line 3
+[26-Apr-2022 01:45:34 UTC] Server received last name: etabbert
+
+[26-Apr-2022 01:45:34 UTC] PHP Fatal error:  Uncaught Error: Class "SQLite3" not found in C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php:3
+Stack trace:
+#0 C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php(26): checkLogin('etabbert')
+#1 {main}
+  thrown in C:\Users\ethan\Documents\GitHub\Group5_Capstone_Project\query.php on line 3
