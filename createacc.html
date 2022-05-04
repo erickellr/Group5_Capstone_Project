@@ -25,7 +25,7 @@
       
 	  <input class="usernameBox" id="username" type="text" align="center" placeholder="Username">
       <input class="usernameBox" id="password" type="password" align="center" placeholder="Password">
-      <a class="submit" align="center" onclick="callBackend()">Create Membership</a>
+      <a class="submit" align="center" onclick="callBackend(); setUsername();">Create Membership</a>
       <a class="createSubmit" align="center" onclick="location.href='createQuestion.html';">Back</a>
       <div id="serverRespo"></div>
         <div id="result" align="center"><span style="color:red" id="output1"></span></div>
@@ -41,6 +41,21 @@
 </body>
 <script src="https://www.paypal.com/sdk/js?client-id=Acayc5uYOLXNydlUplMuYdXKVKwxuG1krYrmc6_m9FUwIx7Rk_6zOLFzF4_YdZFSdWRfbt0_pf0wOcXb&currency=USD" data-sdk-integration-source="button-factory"></script>
 <script>
+	function setUsername(){
+		username = document.getElementById('username').value;
+		console.log(username)
+	}
+
+	async function afterPaypal() {
+		let myResponse = await fetch("payment.php", {
+		method: 'POST',
+		headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+		body: JSON.stringify({username: username})
+		});
+		let result = await myResponse.json();
+		let output = JSON.stringify(result);
+	}
+	
     function initPayPalButton() {
       paypal.Buttons({
         style: {
@@ -70,16 +85,9 @@
 
             // Or go to another URL:  actions.redirect('thank_you.html');
 			
-			//Here's what I have so far just based on the other pages.
-			/*
-			let myResponse = await fetch("payment.php", {
-			method: 'POST',
-			headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-			body: JSON.stringify({username: username})
-			});
-			let result = await myResponse.json();
-			let output = JSON.stringify(result);
-			*/
+			afterPaypal();
+			
+			
           });
         },
 

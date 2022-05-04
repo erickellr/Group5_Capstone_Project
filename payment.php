@@ -5,12 +5,12 @@ function membershipPaid($username){
     $query = "SELECT * FROM userInfo WHERE username = '$username'";
     $queryResult = $db->querySingle($query, true);
     error_log(print_r($queryResult, true));
-	$query = "INSERT INTO userInfo (memberStatus) values (1)";
+	$query = "UPDATE userInfo SET memberStatus = 1 WHERE username = '$username'";
 	$db->exec($query);
 	$loginResult = array('username' => $username);
 	$db->exec('END;');
     $db->close();
-	return "Complete"
+	return "Complete";
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
