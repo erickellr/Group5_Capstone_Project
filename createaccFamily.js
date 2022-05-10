@@ -10,6 +10,11 @@
       model = document.getElementById('model').value;
       username = document.getElementById('username').value;
       password = document.getElementById('password').value;
+	  af1 = document.getElementById('af1').value;
+	  af2 = document.getElementById('af2').value;
+	  
+	  console.log(af1)
+	  console.log(af2)
       
       var alphaRegEx = /^[A-Za-z]+$/;
       var alphaNRegEx = /^[0-9a-zA-Z]+$/;
@@ -29,7 +34,7 @@
       let myResponse = await fetch("familyinfo.php", {
 	  method: 'POST',
 	  headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
-	  body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, street: street, city: city, state: state, zip: zip, model: model, username: username, password: password, AF1: af1, AF2: af2})
+	  body: JSON.stringify({firstName: firstName, lastName: lastName, email: email, street: street, city: city, state: state, zip: zip, model: model, username: username, password: password, af1: af1, af2: af2})
 	  });
       let result = await myResponse.json();
       let output = JSON.stringify(result);

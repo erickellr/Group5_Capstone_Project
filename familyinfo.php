@@ -1,12 +1,12 @@
 <?php
-function checkLogin($firstName, $lastName, $email, $street, $city, $state, $zip, $model, $username, $password) {
+function checkLogin($firstName, $lastName, $email, $street, $city, $state, $zip, $model, $username, $password, $af1, $af2) {
     $db = new SQLite3('db/individual.db');
     $db->exec('BEGIN EXCLUSIVE;');
     $query = "SELECT * FROM userInfo WHERE username = '$username'";
     $queryResult = $db->querySingle($query, true);
     error_log(print_r($queryResult, true));
     if (count($queryResult) === 0) {
-	$query = "INSERT INTO userInfo (firstname, lastname, email, street, city, state, zip, model, username, password, af1, af2, memberStatus) values ('$firstName', '$lastName', '$email', '$street', '$city', '$state', '$zip', '$model', '$username', '$password', '$af1', 'af2', 0)";
+	$query = "INSERT INTO userInfo (firstname, lastname, email, street, city, state, zip, model, username, password, af1, af2, memberStatus) values ('$firstName', '$lastName', '$email', '$street', '$city', '$state', '$zip', '$model', '$username', '$password', '$af1', '$af2', 0)";
 	$db->exec($query);
 	$loginResult = array('username' => $username);	
     } else {
