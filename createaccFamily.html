@@ -28,6 +28,7 @@
       <input class="usernameBox" id="AF2" type="text" align="center" placeholder="Additional Family Member 2">
       <a class="submit" align="center" onclick="callBackend()">Create Membership</a>
       <a class="createSubmit" align="center" onclick="location.href='createQuestion.html';">Back</a>
+	  <p class="welcomeFont" align="center">Payment Due: $84</p>
       <div id="serverRespo"></div>
         <div id="result" align="center"><span style="color:red" id="output1"></span></div>
                 
@@ -42,6 +43,25 @@
 </body>
 <script src="https://www.paypal.com/sdk/js?client-id=Acayc5uYOLXNydlUplMuYdXKVKwxuG1krYrmc6_m9FUwIx7Rk_6zOLFzF4_YdZFSdWRfbt0_pf0wOcXb&currency=USD" data-sdk-integration-source="button-factory"></script>
 <script>
+	function setUsername(){
+		username = document.getElementById('username').value;
+		console.log(username)
+	}
+
+	async function afterPaypal() {
+		let myResponse = await fetch("payment.php", {
+		method: 'POST',
+		headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
+		body: JSON.stringify({username: username})
+		});
+		let result = await myResponse.json();
+		let output = JSON.stringify(result);
+	}
+	
+	function changeWindow(){
+		window.location.assign("confirmation.html");
+	}
+	
     function initPayPalButton() {
       paypal.Buttons({
         style: {
@@ -70,7 +90,9 @@
             element.innerHTML = '<h3>Thank you for your payment!</h3>';
 
             // Or go to another URL:  actions.redirect('thank_you.html');
-            
+            afterPaypal();
+			changeWindow();
+
           });
         },
 
