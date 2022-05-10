@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="welcomeStyle.css">
+  <link rel="stylesheet" href="signin.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script type="text/javascript" src="login.js"></script>
+  <script type="text/javascript" src="SI.js"></script>
   <title>Welcome</title>
   <img src="logo.png" class="center"/>
 
@@ -17,11 +17,11 @@
     <p class="welcomeFont" align="center">Please enter your username and password below:</p>
     <form class="form1">
       <input class="queryBox" id="UN" type="text" align="center" placeholder="Username">
-      <input class="queryBox" id="PW" type="password" align="center" placeholder="Password">
-      <a class="signinButton" align="center" onclick="siq()">Sign In</a>
+      <input class="queryBox" id="PW" type="text" align="center" placeholder="Password">
+      <a class="signinButton" align="center" onclick="signin()">Sign In</a>
       <div id="serverRespo"></div>
-        <div id="result" align="center"><span style="color:red" id="output1"></span></div> 
-                
+      <div id="result" align="center"><span style="color:red" id="output1"></span></div> 
+      <a id ="edit" class="editButton" align="center" onclick="location.href = 'editinfo.html';">Edit Member Info</a>
     </div>
      
 </body>
